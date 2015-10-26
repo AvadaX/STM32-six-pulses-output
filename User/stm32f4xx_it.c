@@ -56,7 +56,12 @@ int tunnel3[2];
 int tunnel4[2];
 int tunnel5[2];
 int tunnel6[2];
-
+int tunnel1_index = 0;
+int tunnel2_index = 0;
+int tunnel3_index = 0;
+int tunnel4_index = 0;
+int tunnel5_index = 0;
+int tunnel6_index = 0;
 void TIM3_IRQHandler(void)
 {
 	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) //Òç³öÖÐ¶Ï
@@ -70,22 +75,40 @@ void TIM3_IRQHandler(void)
 			LED2 = !LED2;
 			LED3 = !LED3;
 		  if(!(time_index%tunnel1[0])){
-				 LED0 = !LED0;
+				 if(tunnel1_index < tunnel1[0]){
+						LED0 = !LED0;
+						tunnel1_index ++;
+				 }									 
 			}
 			if(!(time_index%tunnel2[0])){
-				 LED1 = !LED1; 
+				 if(tunnel2_index < tunnel2[0]){
+						LED1 = !LED1;
+						tunnel2_index ++;
+				 } 
 			}
 			if(!(time_index%tunnel3[0])){
-				 LED2 = !LED2; 
+				 if(tunnel3_index < tunnel3[0]){
+						LED2 = !LED2;
+						tunnel3_index ++;
+				 } 
 			}
 			if(!(time_index%tunnel4[0])){
-				 LED3 = !LED3;
+				 if(tunnel4_index < tunnel4[0]){
+						LED3 = !LED3;
+						tunnel4_index ++;
+				 }
 			}
 			if(!(time_index%tunnel5[0])){
-				 LED4 = !LED4;
+				 if(tunnel5_index < tunnel5[0]){
+						LED4 = !LED4;
+						tunnel5_index ++;
+				 }
 			}
 			if(!(time_index%tunnel6[0])){
-				 LED5 = !LED5;
+				 if(tunnel6_index < tunnel6[0]){
+						LED5 = !LED5;
+						tunnel6_index ++;
+				 }
 			}
 			time_index ++;
 			if(time_index == 1000){
@@ -101,7 +124,13 @@ void TIM3_IRQHandler(void)
 				tunnel3[0] = 1; 
 				tunnel4[0] = 1; 
 				tunnel5[0] = 1; 
-				tunnel6[0] = 1;  
+				tunnel6[0] = 1;
+        tunnel1_index = 0;	
+				tunnel2_index = 0;
+				tunnel3_index = 0;	
+				tunnel4_index = 0;	
+				tunnel5_index = 0;	
+				tunnel6_index = 0;	
 			}
 
 		
