@@ -29,7 +29,8 @@ int main(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置系统中断优先级分组2
   LEDGpio_Init();                  //LED引脚初始化
-  TIM3_Int_Init(5-1,84-1);//定时器时钟84M，分频系数8400，所以84M/8400=10Khz的计数频率，计数50次为5ms  
+  TIM3_Int_Init(5-1,84-1);//定时器时钟84M，分频系数84，所以84M/84=1000Khz的计数频率，计数5次为5us  
+	//LED = 0;
   while (1)
   {
      /* LED4_ONOFF(Bit_SET);         //LED4置高（灭灯） 从原理图可以看出，LED为低电平亮。

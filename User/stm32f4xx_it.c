@@ -30,7 +30,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 #include "Gpio.h"
-
+#include "stdlib.h"
 /** @addtogroup STM32F4xx_StdPeriph_Examples
   * @{
   */
@@ -62,6 +62,18 @@ int tunnel3_index = 0;
 int tunnel4_index = 0;
 int tunnel5_index = 0;
 int tunnel6_index = 0;
+int tunnel1_circle = 2000;
+int tunnel2_circle = 2000;
+int tunnel3_circle = 2000;
+int tunnel4_circle = 2000;
+int tunnel5_circle = 2000;
+int tunnel6_circle = 2000;
+div_t tunnel1_data;
+div_t tunnel2_data;
+div_t tunnel3_data;
+div_t tunnel4_data;
+div_t tunnel5_data;
+div_t tunnel6_data;
 void TIM3_IRQHandler(void)
 {
 	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) //Òç³öÖÐ¶Ï
@@ -70,48 +82,47 @@ void TIM3_IRQHandler(void)
       LED1_ONOFF(Bit_RESET);       //LED1ÖÃµÍ£¨¿ªµÆ£©     
       LED2_ONOFF(Bit_SET);
       LED3_ONOFF(Bit_RESET);*/
-		  LED0 = !LED0;
-			LED1 = !LED1;
-			LED2 = !LED2;
-			LED3 = !LED3;
-		  if(!(time_index%tunnel1[0])){
-				 if(tunnel1_index < tunnel1[0]){
-						LED0 = !LED0;
-						tunnel1_index ++;
-				 }									 
+		  //LED = !LED;
+		  if(!(time_index%tunnel1_circle)){
+				 if(tunnel1_index == tunnel1_data.rem-2)
+						tunnel1_circle ++;
+				 LED0 = !LED0;
+				 LED = !LED;
+				 tunnel1_index ++;									 
 			}
-			if(!(time_index%tunnel2[0])){
-				 if(tunnel2_index < tunnel2[0]){
-						LED1 = !LED1;
-						tunnel2_index ++;
-				 } 
+			if(!(time_index%tunnel2_circle)){
+				 if(tunnel2_index == tunnel2_data.rem-2)
+						tunnel2_circle ++;
+				 LED1 = !LED1;
+				 tunnel2_index ++; 
 			}
-			if(!(time_index%tunnel3[0])){
-				 if(tunnel3_index < tunnel3[0]){
-						LED2 = !LED2;
-						tunnel3_index ++;
-				 } 
+			if(!(time_index%tunnel3_circle)){
+				 if(tunnel3_index == tunnel3_data.rem-2)
+						tunnel3_circle ++;
+				 LED2 = !LED2;
+				 tunnel3_index ++; 
 			}
-			if(!(time_index%tunnel4[0])){
-				 if(tunnel4_index < tunnel4[0]){
-						LED3 = !LED3;
-						tunnel4_index ++;
-				 }
+			if(!(time_index%tunnel4_circle)){
+				 if(tunnel4_index == tunnel4_data.rem-2)
+						tunnel4_circle ++;
+				 LED3 = !LED3;
+				 tunnel4_index ++;
 			}
-			if(!(time_index%tunnel5[0])){
-				 if(tunnel5_index < tunnel5[0]){
-						LED4 = !LED4;
-						tunnel5_index ++;
-				 }
+			if(!(time_index%tunnel5_circle)){
+				 if(tunnel5_index == tunnel5_data.rem-2)
+						tunnel5_circle ++;
+				 LED4 = !LED4;
+				 tunnel5_index ++;
 			}
-			if(!(time_index%tunnel6[0])){
-				 if(tunnel6_index < tunnel6[0]){
-						LED5 = !LED5;
-						tunnel6_index ++;
-				 }
+			if(!(time_index%tunnel6_circle)){
+				 if(tunnel6_index == tunnel6_data.rem-2)
+						tunnel6_circle ++;
+				 LED5 = !LED5;
+				 tunnel6_index ++;
 			}
 			time_index ++;
-			if(time_index == 1000){
+			//LED = !LED;
+			if(time_index == 8000){
 				time_index = 0;  
 			 /* tunnel1[0] = tunnel1[1]; 
 				tunnel2[0] = tunnel2[1]; 
@@ -119,12 +130,45 @@ void TIM3_IRQHandler(void)
 				tunnel4[0] = tunnel4[1]; 
 				tunnel5[0] = tunnel5[1]; 
 				tunnel6[0] = tunnel6[1];*/
-				tunnel1[0] = 1; 
-				tunnel2[0] = 1; 
-				tunnel3[0] = 1; 
-				tunnel4[0] = 1; 
-				tunnel5[0] = 1; 
-				tunnel6[0] = 1;
+				tunnel1[0] = 8000; 
+				tunnel2[0] = 8000; 
+				tunnel3[0] = 8000; 
+				tunnel4[0] = 8000; 
+				tunnel5[0] = 8000; 
+				tunnel6[0] = 8000;
+				tunnel1_data= div(8000,tunnel1[0]);
+				tunnel2_data= div(8000,tunnel2[0]);
+				tunnel3_data= div(8000,tunnel3[0]);
+				tunnel4_data= div(8000,tunnel4[0]);
+				tunnel5_data= div(8000,tunnel5[0]);
+				tunnel6_data= div(8000,tunnel6[0]);
+				//LED = !LED;
+				if(tunnel1_data.rem != 0){
+				    tunnel1_circle = tunnel1_data.quot + 1;
+						}
+				else{
+					  tunnel1_circle = tunnel1_data.quot;
+						}
+				if(tunnel2_data.rem != 0)
+				    tunnel2_circle = tunnel2_data.quot + 1;
+				else
+					  tunnel2_circle = tunnel2_data.quot;
+				if(tunnel3_data.rem != 0)
+				    tunnel3_circle = tunnel3_data.quot + 1;
+				else
+					  tunnel3_circle = tunnel3_data.quot;
+				if(tunnel4_data.rem != 0)
+				    tunnel4_circle = tunnel4_data.quot + 1;
+				else
+					  tunnel4_circle = tunnel4_data.quot;
+				if(tunnel5_data.rem != 0)
+				    tunnel5_circle = tunnel5_data.quot + 1;
+				else
+					  tunnel5_circle = tunnel5_data.quot;
+				if(tunnel6_data.rem != 0)
+				    tunnel6_circle = tunnel6_data.quot + 1;
+				else
+					  tunnel6_circle = tunnel6_data.quot;
         tunnel1_index = 0;	
 				tunnel2_index = 0;
 				tunnel3_index = 0;	

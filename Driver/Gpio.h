@@ -1,6 +1,6 @@
 #ifndef _GPIO_H_
 #define _GIPO_H_
-
+#include <math.h>
 //位带操作,实现51类似的GPIO控制功能
 //具体实现思想,参考<<CM3权威指南>>第五章(87页~92页).M4同M3类似,只是寄存器地址变了.
 //IO口操作宏定义
@@ -85,12 +85,13 @@
 #define LED3 PCout(13)	// DS1
 #define LED4 PCout(14)	// DS1
 #define LED5 PCout(15)	// DS1
+
+#define LED PDout(12)	
 typedef struct{
     uint32_t     rcc;
     GPIO_TypeDef *gpio;
     uint16_t     pin;
 }Gpio_Info;
-
 void LEDGpio_Init(void);
 void Delay(__IO uint32_t nCount);  //函数声明
 #endif

@@ -35,3 +35,4 @@
 .\obj\main.o: ..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\obj\main.o: ..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 .\obj\main.o: ..\Driver\Gpio.h
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
