@@ -442,11 +442,6 @@
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\misc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_can.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_can.c</FilePath>
@@ -477,11 +472,6 @@
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_dac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_dbgmcu.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dbgmcu.c</FilePath>
@@ -492,19 +482,9 @@
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dcmi.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_fsmc.c</FileName>
@@ -532,11 +512,6 @@
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_sha1.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_iwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_iwdg.c</FilePath>
@@ -560,16 +535,6 @@
               <FileName>stm32f4xx_rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_sdio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_syscfg.c</FileName>

@@ -78,45 +78,42 @@ void TIM3_IRQHandler(void)
 {
 	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) //溢出中断
 	{
-		  /*LED4_ONOFF(Bit_SET);         //LED4置高（灭灯） 从原理图可以看出，LED为低电平亮。
-      LED1_ONOFF(Bit_RESET);       //LED1置低（开灯）     
-      LED2_ONOFF(Bit_SET);
-      LED3_ONOFF(Bit_RESET);*/
-		  //LED = !LED;
 		  if(!(time_index%tunnel1_circle)){
-				 if(tunnel1_index == tunnel1_data.rem-2)
-						tunnel1_circle ++;
+				 if(tunnel1_index == tunnel1_data.rem-2){
+						tunnel1_circle = tunnel1_circle + 1;LED = !LED;
+	//			 }
+						
 				 LED0 = !LED0;
-				 LED = !LED;
+				// LED = !LED;
 				 tunnel1_index ++;									 
 			}
 			if(!(time_index%tunnel2_circle)){
 				 if(tunnel2_index == tunnel2_data.rem-2)
-						tunnel2_circle ++;
+						tunnel2_circle = tunnel2_circle + 1;
 				 LED1 = !LED1;
 				 tunnel2_index ++; 
 			}
 			if(!(time_index%tunnel3_circle)){
 				 if(tunnel3_index == tunnel3_data.rem-2)
-						tunnel3_circle ++;
+						tunnel3_circle = tunnel3_circle + 1;
 				 LED2 = !LED2;
 				 tunnel3_index ++; 
 			}
 			if(!(time_index%tunnel4_circle)){
 				 if(tunnel4_index == tunnel4_data.rem-2)
-						tunnel4_circle ++;
+						tunnel4_circle = tunnel4_circle + 1;
 				 LED3 = !LED3;
 				 tunnel4_index ++;
 			}
 			if(!(time_index%tunnel5_circle)){
 				 if(tunnel5_index == tunnel5_data.rem-2)
-						tunnel5_circle ++;
+						tunnel5_circle = tunnel5_circle + 1;
 				 LED4 = !LED4;
 				 tunnel5_index ++;
 			}
 			if(!(time_index%tunnel6_circle)){
 				 if(tunnel6_index == tunnel6_data.rem-2)
-						tunnel6_circle ++;
+						tunnel6_circle = tunnel6_circle + 1;
 				 LED5 = !LED5;
 				 tunnel6_index ++;
 			}
@@ -130,21 +127,27 @@ void TIM3_IRQHandler(void)
 				tunnel4[0] = tunnel4[1]; 
 				tunnel5[0] = tunnel5[1]; 
 				tunnel6[0] = tunnel6[1];*/
-				tunnel1[0] = 2000; 
-				tunnel2[0] = 2000; 
-				tunnel3[0] = 2000; 
-				tunnel4[0] = 2000; 
-				tunnel5[0] = 2000; 
-				tunnel6[0] = 2000;
-				tunnel1_data= div(8000,tunnel1[0]*2);
-				tunnel2_data= div(8000,tunnel2[0]*2);
-				tunnel3_data= div(8000,tunnel3[0]*2);
-				tunnel4_data= div(8000,tunnel4[0]*2);
-				tunnel5_data= div(8000,tunnel5[0]*2);
-				tunnel6_data= div(8000,tunnel6[0]*2);
+				tunnel1[0] = 3000; 
+				tunnel2[0] = 3000; 
+				tunnel3[0] = 3000; 
+				tunnel4[0] = 3000; 
+				tunnel5[0] = 3000; 
+				tunnel6[0] = 3000;
+				/*tunnel1_circle = 4000/tunnel1[0];
+				tunnel2_circle = 4000/tunnel2[0];
+				tunnel3_circle = 4000/tunnel3[0];
+				tunnel4_circle = 4000/tunnel4[0];
+				tunnel5_circle = 4000/tunnel5[0];
+				tunnel6_circle = 4000/tunnel6[0];*/
+				tunnel1_data= div(8000,tunnel1[0]);
+				tunnel2_data= div(8000,tunnel2[0]);
+				tunnel3_data= div(8000,tunnel3[0]);
+				tunnel4_data= div(8000,tunnel4[0]);
+				tunnel5_data= div(8000,tunnel5[0]);
+				tunnel6_data= div(8000,tunnel6[0]);
 				//LED = !LED;
 				if(tunnel1_data.rem != 0){
-				    tunnel1_circle = tunnel1_data.quot + 1;
+				    tunnel1_circle = tunnel1_data.quot + 0;
 						}
 				else{
 					  tunnel1_circle = tunnel1_data.quot;
