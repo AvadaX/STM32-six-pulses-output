@@ -80,8 +80,8 @@ void TIM3_IRQHandler(void)
 	{
 		  if(!(time_index%tunnel1_circle)){
 				 if(tunnel1_index == tunnel1_data.rem-2){
-						tunnel1_circle = tunnel1_circle + 1;LED = !LED;
-	//			 }
+						tunnel1_circle = tunnel1_circle + 1;
+				 }
 						
 				 LED0 = !LED0;
 				// LED = !LED;
