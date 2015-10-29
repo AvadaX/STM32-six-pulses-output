@@ -85,7 +85,7 @@
 #define LED3 PCout(13)	// DS1
 #define LED4 PCout(14)	// DS1
 #define LED5 PCout(15)	// DS1
-
+#define LED6 PCout(9)
 #define LED PDout(12)	
 typedef struct{
     uint32_t     rcc;

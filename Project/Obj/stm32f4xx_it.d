@@ -38,3 +38,5 @@
 .\obj\stm32f4xx_it.o: ..\Driver\Gpio.h
 .\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\obj\stm32f4xx_it.o: ..\HARDWARE\usart\usart.h
+.\obj\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
