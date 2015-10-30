@@ -31,7 +31,7 @@ int main(void)
   LEDGpio_Init();                  //LED引脚初始化
   TIM3_Int_Init(5-1,84-1);//定时器时钟84M，分频系数84，所以84M/84=1000Khz的计数频率，计数5次为5us  
 	LED = 0;
-	uart_init(9600);
+	uart_init(115200);
   while (1)
   {
 
