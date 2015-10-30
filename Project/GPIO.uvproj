@@ -363,7 +363,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F4XX,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\User;..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\Driver;..\HARDWARE\PWM;..\HARDWARE\usart</IncludePath>
+              <IncludePath>..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\User;..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\Driver;..\HARDWARE\PWM;..\HARDWARE\usart;.\</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -430,6 +430,11 @@
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\stm32f4xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>circle_array.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\circle_array.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -32,6 +32,7 @@
 #include "Gpio.h"
 #include "stdlib.h"
 #include "usart.h"
+
 /** @addtogroup STM32F4xx_StdPeriph_Examples
   * @{
   */
@@ -239,7 +240,7 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)  //接收中断(接收到的数据必须是0x0d 0x0a结尾)
 	{
 		Res =USART_ReceiveData(USART1);//(USART1->DR);	//读取接收到的数据
-		Res = Res;  		 
+		circle_array_read(Res);	 
   } 
 } 
 
